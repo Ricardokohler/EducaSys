@@ -1,11 +1,12 @@
 package com.educasys.entitites;
 
 
+import com.educasys.entitites.associations.Subject_Professor;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_professors")
@@ -17,7 +18,10 @@ public class Professor extends Person{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_professor;
+    private long id;
 
+    //Subject - Many to Many
+    @OneToMany(mappedBy = "id.professor")
+    private Set<Subject_Professor> subjects = new HashSet<>();
 
 }

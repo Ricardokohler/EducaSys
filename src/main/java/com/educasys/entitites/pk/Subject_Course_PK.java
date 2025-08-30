@@ -1,8 +1,9 @@
 package com.educasys.entitites.pk;
 
-import com.educasys.entitites.ClassRoom;
-import com.educasys.entitites.Student;
+import com.educasys.entitites.Course;
+import com.educasys.entitites.Subject;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,12 +13,13 @@ import lombok.Setter;
 @Setter
 @Embeddable
 @EqualsAndHashCode
-public class ClassRoom_Student_PK {
+public class Subject_Course_PK {
 
     @ManyToOne
-    private Student student;
+    @JoinColumn(name = "subject")
+    private Subject subject;
 
     @ManyToOne
-    private ClassRoom classRoom;
-
+    @JoinColumn(name = "course")
+    private Course course;
 }

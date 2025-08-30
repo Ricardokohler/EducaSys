@@ -19,4 +19,8 @@ public class Coordinator extends Person{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_coordinator;
 
+
+    //Course one to one
+    @OneToOne(mappedBy = "coordinator")
+    private Course course;
 }
