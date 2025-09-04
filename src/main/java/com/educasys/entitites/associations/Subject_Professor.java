@@ -41,5 +41,9 @@ public class Subject_Professor {
         return id.getSubject();
     }
 
+    public void setSubject(Subject subject){
+        id.setSubject(subject);
+    }
+
 
 }

@@ -38,7 +38,7 @@ public class Subject_Student {
         id.setSubject(subject);
     }
 
-    public Subject getSubject(Subject subject){
+    public Subject getSubject(){
         return id.getSubject();
     }
 }

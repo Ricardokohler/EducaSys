@@ -35,13 +35,14 @@ public class ClassRoom_Student_Service {
     }
 
     //update
-    public ClassRoom_Student updateClassRoom_Student(ClassRoom_Student ClassRoom_Student, Long id){
+    public ClassRoom_Student updateClassRoom_Student(ClassRoom_Student classRoom_Student, Long id){
         Optional <ClassRoom_Student> oldClassRoom_Student = repository.findById(id);
 
         if(oldClassRoom_Student.isPresent()){
             ClassRoom_Student newClassRoom_Student = oldClassRoom_Student.get();
 
-            //newClassRoom_Student.set...(ClassRoom_Student.get...);
+            newClassRoom_Student.setClassRoom(classRoom_Student.getClassRoom());
+            newClassRoom_Student.setStudent(classRoom_Student.getStudent());
 
             return repository.save(newClassRoom_Student);
         } else throw new RuntimeException("id not found");

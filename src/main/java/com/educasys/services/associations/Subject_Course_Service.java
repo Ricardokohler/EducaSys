@@ -41,7 +41,8 @@ public class Subject_Course_Service {
         if(oldSubject_Course.isPresent()){
             Subject_Course newSubject_Course = oldSubject_Course.get();
 
-            //newSubject_Course.set...(Subject_Course.get...);
+            newSubject_Course.setCourse(subject_Course.getCourse());
+            newSubject_Course.setSubject(subject_Course.getSubject());
 
             return repository.save(newSubject_Course);
         } else throw new RuntimeException("id not found");

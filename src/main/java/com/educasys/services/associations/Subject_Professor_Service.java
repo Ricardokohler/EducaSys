@@ -41,7 +41,8 @@ public class Subject_Professor_Service {
         if(oldSubject_Professor.isPresent()){
             Subject_Professor newSubject_Professor = oldSubject_Professor.get();
 
-            //newSubject_Professor.set...(Subject_Professor.get...);
+            newSubject_Professor.setProfessor(subject_Professor.getProfessor());
+            newSubject_Professor.setSubject(subject_Professor.getSubject());
 
             return repository.save(newSubject_Professor);
         } else throw new RuntimeException("id not found");
