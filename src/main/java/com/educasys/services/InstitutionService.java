@@ -41,7 +41,9 @@ public class InstitutionService {
         if(oldInstitution.isPresent()){
             Institution newInstitution = oldInstitution.get();
 
-
+            newInstitution.setName(institution.getName());
+            newInstitution.setDescription(institution.getDescription());
+            newInstitution.setCourses(institution.getCourses());
 
             return repository.save(newInstitution);
         } else throw new RuntimeException("id not found");

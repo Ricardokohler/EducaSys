@@ -41,7 +41,13 @@ public class CourseService {
         if(oldCourse.isPresent()){
             Course newCourse = oldCourse.get();
 
+            newCourse.setClassRooms(course.getClassRooms());
+            newCourse.setName(course.getName());
+            newCourse.setHourTime(course.getHourTime());
 
+            newCourse.setInstitution(course.getInstitution());
+            newCourse.setCoordinator(course.getCoordinator());
+            newCourse.setSubjects(course.getSubjects());
 
             return repository.save(newCourse);
         } else throw new RuntimeException("id not found");

@@ -41,7 +41,11 @@ public class ClassRoomService {
         if(oldClassRoom.isPresent()){
             ClassRoom newClassRoom = oldClassRoom.get();
 
-            //newClassRoom.set...(classRoom.get...);
+            newClassRoom.setShift(classRoom.getShift());
+            newClassRoom.setLeter(classRoom.getLeter());
+            newClassRoom.setStudents(classRoom.getStudents());
+            newClassRoom.setSemester(classRoom.getSemester());
+            newClassRoom.setCourse(classRoom.getCourse());
 
             return repository.save(newClassRoom);
         } else throw new RuntimeException("id not found");

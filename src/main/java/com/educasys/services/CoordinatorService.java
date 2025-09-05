@@ -41,7 +41,8 @@ public class CoordinatorService {
         if(oldCoordinator.isPresent()){
             Coordinator newCoordinator = oldCoordinator.get();
 
-            //newCoordinator.set...(Coordinator.get...);
+            //nao esta estendendo person em get e set
+            newCoordinator.setCourse(coordinator.getCourse());
 
             return repository.save(newCoordinator);
         } else throw new RuntimeException("id not found");
