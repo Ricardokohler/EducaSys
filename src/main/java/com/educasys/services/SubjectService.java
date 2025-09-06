@@ -37,13 +37,18 @@ public class SubjectService {
     }
 
     //update
-    public Subject updateSubject(Subject Subject, Long id){
+    public Subject updateSubject(Subject subject, Long id){
         Optional <Subject> oldSubject = repository.findById(id);
 
         if(oldSubject.isPresent()){
             Subject newSubject = oldSubject.get();
 
+            newSubject.setName(subject.getName());
+            newSubject.setHourTime(subject.getHourTime());
 
+            newSubject.setCourses(subject.getCourses());
+            newSubject.setStudents(subject.getStudents());
+            newSubject.setProfessors(subject.getProfessors());
 
             return repository.save(newSubject);
         } else throw new RuntimeException("id not found");

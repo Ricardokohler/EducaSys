@@ -41,7 +41,15 @@ public class StudentService {
         if(oldStudent.isPresent()){
             Student newStudent = oldStudent.get();
 
+            newStudent.setName(student.getName());
+            newStudent.setEmail(student.getEmail());
+            newStudent.setAddress(student.getAddress());
+            newStudent.setBirthDate(student.getBirthDate());
+            newStudent.setPhone(student.getPhone());
 
+            newStudent.setClassRooms(student.getClassRooms());
+            newStudent.setReportCards(student.getReportCards());
+            newStudent.setSubjects(student.getSubjects());
 
             return repository.save(newStudent);
         } else throw new RuntimeException("id not found");

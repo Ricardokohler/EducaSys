@@ -35,13 +35,20 @@ public class SubjectAverageService {
     }
 
     //update
-    public SubjectAverage updateSubjectAverage(SubjectAverage SubjectAverage, Long id){
+    public SubjectAverage updateSubjectAverage(SubjectAverage subjectAverage, Long id){
         Optional <SubjectAverage> oldSubjectAverage = repository.findById(id);
 
         if(oldSubjectAverage.isPresent()){
             SubjectAverage newSubjectAverage = oldSubjectAverage.get();
 
+            newSubjectAverage.setNota1(subjectAverage.getNota1());
+            newSubjectAverage.setNota2(subjectAverage.getNota2());
+            newSubjectAverage.setNota3(subjectAverage.getNota3());
+            newSubjectAverage.setMedia(subjectAverage.getMedia());
 
+            newSubjectAverage.setStudent(subjectAverage.getStudent());
+            newSubjectAverage.setSubject(subjectAverage.getSubject());
+            newSubjectAverage.setReportCard(subjectAverage.getReportCard());
 
             return repository.save(newSubjectAverage);
         } else throw new RuntimeException("id not found");

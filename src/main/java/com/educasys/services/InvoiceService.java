@@ -41,7 +41,8 @@ public class InvoiceService {
         if(oldInvoice.isPresent()){
             Invoice newInvoice = oldInvoice.get();
 
-            newInvoice.
+            newInvoice.setAmount(invoice.getAmount());
+            newInvoice.setHolder(invoice.getHolder());
 
             return repository.save(newInvoice);
         } else throw new RuntimeException("id not found");

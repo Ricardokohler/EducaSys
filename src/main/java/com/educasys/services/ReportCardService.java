@@ -41,7 +41,8 @@ public class ReportCardService {
         if(oldReportCard.isPresent()){
             ReportCard newReportCard = oldReportCard.get();
 
-
+            newReportCard.setStudent(reportCard.getStudent());
+            newReportCard.setSubjectAverageList(reportCard.getSubjectAverageList());
 
             return repository.save(newReportCard);
         } else throw new RuntimeException("id not found");

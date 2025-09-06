@@ -41,7 +41,13 @@ public class ProfessorService {
         if(oldProfessor.isPresent()){
             Professor newProfessor = oldProfessor.get();
 
+            newProfessor.setName(professor.getName());
+            newProfessor.setEmail(professor.getEmail());
+            newProfessor.setAddress(professor.getAddress());
+            newProfessor.setBirthDate(professor.getBirthDate());
+            newProfessor.setPhone(professor.getPhone());
 
+            newProfessor.setSubjects(professor.getSubjects());
 
             return repository.save(newProfessor);
         } else throw new RuntimeException("id not found");

@@ -41,7 +41,12 @@ public class CoordinatorService {
         if(oldCoordinator.isPresent()){
             Coordinator newCoordinator = oldCoordinator.get();
 
-            //nao esta estendendo person em get e set
+            newCoordinator.setName(coordinator.getName());
+            newCoordinator.setAddress(coordinator.getAddress());
+            newCoordinator.setEmail(coordinator.getEmail());
+            newCoordinator.setBirthDate(coordinator.getBirthDate());
+            newCoordinator.setPhone(coordinator.getPhone());
+
             newCoordinator.setCourse(coordinator.getCourse());
 
             return repository.save(newCoordinator);

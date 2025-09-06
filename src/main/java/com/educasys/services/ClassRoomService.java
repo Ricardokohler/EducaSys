@@ -43,8 +43,10 @@ public class ClassRoomService {
 
             newClassRoom.setShift(classRoom.getShift());
             newClassRoom.setLeter(classRoom.getLeter());
-            newClassRoom.setStudents(classRoom.getStudents());
             newClassRoom.setSemester(classRoom.getSemester());
+
+            newClassRoom.setStudents(classRoom.getStudents());
+
             newClassRoom.setCourse(classRoom.getCourse());
 
             return repository.save(newClassRoom);
