@@ -38,6 +38,8 @@ public class Student extends Person{
 
     @OneToMany(mappedBy = "student")
     private List<ReportCard> reportCards = new ArrayList<>();
+
+
     //Invoice - one to many
 
 
