@@ -1,6 +1,7 @@
 package com.educasys.entitites;
 
 import com.educasys.entitites.associations.ClassRoom_Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,15 +23,15 @@ public class ClassRoom {
     private Long id;
 
     private String shift;
-    private char leter;
+    private char letter;
     private String semester;
 
-    //Student - One to Many
+
+    @JsonIgnore
     @OneToMany(mappedBy = "id.classRoom")
     private Set <ClassRoom_Student> students = new HashSet<>();
 
-    //Course - Many to One
     @ManyToOne
-    @JoinColumn(name = "Course_id_FK")
+    @JoinColumn(name = "ID_COURSE_FK")
     private Course course;
 }

@@ -1,6 +1,7 @@
 package com.educasys.entitites;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tb_coordinators")
+@Table(name = "tb_coordinator")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,7 +21,7 @@ public class Coordinator extends Person{
     private long id_coordinator;
 
 
-    //Course one to one
+    @JsonIgnore
     @OneToOne(mappedBy = "coordinator")
     private Course course;
 }

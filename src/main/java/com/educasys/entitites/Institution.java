@@ -1,5 +1,6 @@
 package com.educasys.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,12 +18,12 @@ public class  Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_course_pk;
+    private Long id;
 
     private String name;
     private String description;
 
-    //Course One to Many
+    @JsonIgnore
     @OneToMany(mappedBy = "institution")
     private Set <Course> courses = new HashSet<>();
 

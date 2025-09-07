@@ -2,6 +2,7 @@ package com.educasys.entitites;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.jmx.export.annotation.ManagedMetric;
 
 @Entity
 @Table(name="tb_invoices")
@@ -12,12 +13,14 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_invoice_pk;
+    private Long id;
 
     private Double amount;
     private String holder;
 
-    //many to one - Student
+    @ManyToOne
+    @JoinColumn(name = "id_invoice")
+    private Invoice invoice;
 
 
 }

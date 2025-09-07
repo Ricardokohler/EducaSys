@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_report_card")
+@Table(name = "tb_report_cards")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,11 +23,13 @@ public class ReportCard {
     @JoinColumn(name = "id_student")
     private Student student;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "reportCard", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SubjectAverage> subjectAverageList = new ArrayList<>();
 
-    //curso - one to one
 
+    @ManyToOne
+    @JoinColumn(name = "id_course")
+    private Course course;
 
 }

@@ -34,10 +34,12 @@ public class Subject {
     private Set<Subject_Student> students = new HashSet<>();
 
     //Professor - Many to Many
+    @JsonIgnore
     @OneToMany(mappedBy = "id.subject")
     private Set <Subject_Professor> professors = new HashSet<>();
 
     //Course - Many to Many
+    @JsonIgnore
     @OneToMany(mappedBy = "id.subject")
     private Set <Subject_Course> courses = new HashSet<>();
 

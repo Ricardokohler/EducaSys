@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name="tb_Alunos")
+@Table(name="tb_Students")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,6 +27,7 @@ public class Student extends Person{
     private Long id;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "id.student")
     private Set<Subject_Student> subjects = new HashSet<>();
 
@@ -35,12 +36,16 @@ public class Student extends Person{
     @OneToMany(mappedBy = "id.student")
     private Set <ClassRoom_Student> classRooms = new HashSet<>();
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
     private List<ReportCard> reportCards = new ArrayList<>();
 
 
-    //Invoice - one to many
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private List<Invoice> invoices = new ArrayList<>();
+
+
 
 
 

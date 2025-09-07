@@ -10,4 +10,9 @@ public class EducasysApplication {
 		SpringApplication.run(EducasysApplication.class, args);
 	}
 
+
+    // TODO: CRIAR DTO
+    // TODO: MIGRATIONS
+    // TODO: MODELAGEM REPORTCARD ESTÁ INCOMPLETA(FALTA COURSES)
+
 }
