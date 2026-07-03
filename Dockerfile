@@ -1,5 +1,6 @@
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21
+LABEL mantainer="ricardokohlermk@gmail.com"
 WORKDIR	/app
 EXPOSE 8080:8080
-COPY target/EducaSys-0.0.1-SNAPSHOT.jar app.jar 
-ENTRYPOINT ["java", "jar", "app.jar"] 
+COPY target/EducaSys-0.0.1-SNAPSHOT.jar EducaSys-0.0.1.jar
+ENTRYPOINT ["java", "-jar", "EducaSys-0.0.1.jar"]
