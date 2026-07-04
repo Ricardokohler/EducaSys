@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: EducaSys
+  profiles:
+    active: h2
