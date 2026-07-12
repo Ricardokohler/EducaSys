@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21
+FROM postgres
 LABEL mantainer="ricardokohlermk@gmail.com"
 WORKDIR	/app
 EXPOSE 8080
