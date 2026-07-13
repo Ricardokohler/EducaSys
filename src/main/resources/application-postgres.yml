@@ -1,6 +1,10 @@
 spring:
   datasource:
-    url:  spring.datasource.url=jdbc:postgresql://localhost:5432/imobiliaria
+    # Desenvolvimento local (Linux)
+    url: jdbc:postgresql://localhost:5432/db_educasys
+
+    # Docker
+    # url: jdbc:postgresql://host.docker.internal:5432/db_educasys
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
